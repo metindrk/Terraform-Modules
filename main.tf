@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "~>4.0"
     }
   }
@@ -9,14 +9,14 @@ terraform {
 
 provider "aws" {
   region = var.region
-#   profile = "mtn"
+  #   profile = "mtn"
 }
 
 resource "aws_s3_bucket" "myBucket" {
-    bucket = var.name
+  bucket = var.name
 }
 
 resource "aws_s3_bucket_acl" "myBucket" {
-    bucket = aws_s3_bucket.myBucket.bucket
-    acl = "private"
+  bucket = aws_s3_bucket.myBucket.bucket
+  acl    = var.acl
 }
