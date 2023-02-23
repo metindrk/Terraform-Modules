@@ -4,5 +4,6 @@ variable "region" {
 }
 
 variable "name" {
-    type = string
+    default = "drk-s3-bucket"
+
 }
